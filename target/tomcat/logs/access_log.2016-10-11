@@ -1,0 +1,9 @@
+127.0.0.1 - - [11/Oct/2016:16:16:24 +0200] "GET /print-management/ HTTP/1.1" 200 4570 http-bio-8080-exec-1 331
+127.0.0.1 - - [11/Oct/2016:16:16:24 +0200] "GET /print-management/javax.faces.resource/jquery/jquery-plugins.js.xhtml;jsessionid=DC3ABE7824226AFA5587C2B0C15ED132?ln=primefaces&v=5.3 HTTP/1.1" 200 243000 http-bio-8080-exec-6 9
+127.0.0.1 - - [11/Oct/2016:16:16:24 +0200] "GET /print-management/javax.faces.resource/primefaces.js.xhtml;jsessionid=DC3ABE7824226AFA5587C2B0C15ED132?ln=primefaces&v=5.3 HTTP/1.1" 200 350170 http-bio-8080-exec-5 20
+127.0.0.1 - - [11/Oct/2016:16:16:24 +0200] "GET /print-management/javax.faces.resource/jquery/jquery.js.xhtml;jsessionid=DC3ABE7824226AFA5587C2B0C15ED132?ln=primefaces&v=5.3 HTTP/1.1" 200 107783 http-bio-8080-exec-7 24
+127.0.0.1 - - [11/Oct/2016:16:16:24 +0200] "GET /print-management/javax.faces.resource/theme.css.xhtml?ln=primefaces-cupertino HTTP/1.1" 200 18821 http-bio-8080-exec-2 54
+127.0.0.1 - - [11/Oct/2016:16:16:24 +0200] "GET /print-management/javax.faces.resource/fa/font-awesome.css.xhtml?ln=primefaces&v=5.3 HTTP/1.1" 200 25079 http-bio-8080-exec-3 51
+127.0.0.1 - - [11/Oct/2016:16:16:24 +0200] "GET /print-management/resources/css/style.css HTTP/1.1" 200 5265 http-bio-8080-exec-10 1
+127.0.0.1 - - [11/Oct/2016:16:16:24 +0200] "GET /print-management/javax.faces.resource/validation/validation.js.xhtml?ln=primefaces&v=5.3 HTTP/1.1" 200 23987 http-bio-8080-exec-8 3
+127.0.0.1 - - [11/Oct/2016:16:16:24 +0200] "GET /print-management/javax.faces.resource/primefaces.css.xhtml;jsessionid=DC3ABE7824226AFA5587C2B0C15ED132?ln=primefaces&v=5.3 HTTP/1.1" 200 70897 http-bio-8080-exec-4 66

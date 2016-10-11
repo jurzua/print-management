@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>IANUS.ingest</title>
+	<link rel="stylesheet"
+		href="#{sessionBean.appBean.contextRoot}/resources/css/style.css" />
+
+
+
+
+</h:head>
+
+<h:body>
+	<h:form id="msgForm">
+
+		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+			<p:commandButton value="Yes" type="button"
+				styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+			<p:commandButton value="No" type="button"
+				styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+		</p:confirmDialog>
+
+		<h:panelGrid id="msg">
+			<p:dialog widgetVar="msgDialog" header="Messages" modal="true"
+				dynamic="true" visible="#{sessionBean.showMessageDialog}"
+				width="400" height="200">
+				<p:ajax event="close"
+					listener="#{sessionBean.listenerCloseMessageDialog}" />
+				<h:panelGrid columns="1" styleClass="centeredPanelGrid">
+					<p:dataTable var="msg" value="#{sessionBean.msgList}">
+						<p:column>
+							<h:outputText value="#{msg}" />
+						</p:column>
+					</p:dataTable>
+				</h:panelGrid>
+			</p:dialog>
+		</h:panelGrid>
+
+	</h:form>
+
+	<!-- Wrapper -->
+
+	<!-- Header -->
+	<div id="header" class="skel-panels-fixed">
+		<div id="logo">
+			<h1>
+				<a href="#{sessionBean.appBean.contextRoot}">IANUS.ingest</a>
+			</h1>
+			<span class="tag">by Deutsches Archäologisches Institut</span>
+		</div>
+		<nav id="nav">
+		<ul>
+			<li><a
+				href="#{sessionBean.appBean.contextRoot}/pages/metadata/initialMD.xhtml">IMD</a></li>
+			<li><a
+				href="#{sessionBean.appBean.contextRoot}/pages/metadata/dataCollection.xhtml">MD</a></li>
+			<li><a
+				href="#{sessionBean.appBean.contextRoot}/pages/registerDC.xhtml">Register
+					DC</a></li>
+			<li><a
+				href="#{sessionBean.appBean.contextRoot}/pages/submissionList.xhtml">Submission</a></li>
+			<li><a
+				href="#{sessionBean.appBean.contextRoot}/pages/storage.xhtml">Working
+					Storage</a></li>
+			<li><a
+				href="#{sessionBean.appBean.contextRoot}/pages/processEngine.xhtml">Process
+					Engine</a></li>
+			<li><a
+				href="#{sessionBean.appBean.contextRoot}/pages/preservationPlanning.xhtml">Preservation
+					planning</a></li>
+		</ul>
+		</nav>
+	</div>
+
+
+	<div id="page">
+
+		<ui:insert name="content"></ui:insert>
+
+	</div>
+</h:body>
+</html>
