@@ -1,3 +1,8 @@
-/home/jurzua/Projects/IANUS/workspace/print-management/src/main/java/cl/printmanagement/web/AbstractBean.java
-/home/jurzua/Projects/IANUS/workspace/print-management/src/main/java/cl/printmanagement/web/SessionBean.java
-/home/jurzua/Projects/IANUS/workspace/print-management/src/main/java/cl/printmanagement/web/ApplicationBean.java
+/home/jurzua/git/print-management/src/main/java/cl/printmanagement/bo/Print.java
+/home/jurzua/git/print-management/src/main/java/cl/printmanagement/web/SessionBean.java
+/home/jurzua/git/print-management/src/main/java/cl/printmanagement/web/ApplicationBean.java
+/home/jurzua/git/print-management/src/main/java/cl/printmanagement/bo/User.java
+/home/jurzua/git/print-management/src/main/java/cl/printmanagement/web/AbstractBean.java
+/home/jurzua/git/print-management/src/main/java/cl/printmanagement/PersistenceManagerCore.java
+/home/jurzua/git/print-management/src/main/java/cl/printmanagement/bo/DBEntry.java
+/home/jurzua/git/print-management/src/main/java/cl/printmanagement/DBService.java
