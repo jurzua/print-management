@@ -15,6 +15,7 @@ import cl.printmanagement.bo.Print;
 import cl.printmanagement.bo.User;
 
 /** Hola ricardo
+ * Chao ricardo
 */
 public class DBService {
 
