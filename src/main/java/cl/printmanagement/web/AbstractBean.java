@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 import javax.faces.context.FacesContext;
 
-import org.primefaces.context.RequestContext;
-
 
 public class AbstractBean {
 	public static String BEAN_APP = "appBean";
@@ -31,8 +29,6 @@ public class AbstractBean {
 		if(getSession().getMsgList() == null)
 			getSession().setMsgList(new ArrayList<String>());
 		getSession().getMsgList().add(msg);
-		RequestContext context = RequestContext.getCurrentInstance();
-		context.execute("PF('msgDialog').show();");
 	}
 	
 	public ApplicationBean getAppBean(){
