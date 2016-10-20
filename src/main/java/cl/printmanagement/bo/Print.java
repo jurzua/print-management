@@ -54,4 +54,9 @@ public class Print extends DBEntry implements Serializable{
 	public void setComputer(String computer) {
 		this.computer = computer;
 	}
+	
+	@Override
+	public String toString(){
+		return "Print [user="+ user +", computer="+ computer +", printer="+ printer +", document=" +document+ "]";
+	}
 }

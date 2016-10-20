@@ -20,6 +20,15 @@ public class DBService {
 
 	private static final Logger logger = Logger.getLogger(DBService.class);
 	
+	private static DBService instance;
+	
+	public static DBService getInstance(){
+		if(instance == null){
+			instance = new DBService();
+		}
+		return instance;
+	}
+	
 	public List<Print> getPrintList(){
 		long start = System.currentTimeMillis();
 		List<Print> list = new ArrayList<Print>();

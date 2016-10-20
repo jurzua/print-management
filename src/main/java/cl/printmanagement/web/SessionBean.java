@@ -1,21 +1,30 @@
 package cl.printmanagement.web;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.log4j.Logger;
+
+import cl.printmanagement.DBService;
+import cl.printmanagement.bo.Print;
 
 
 public class SessionBean extends JSPWrapper{
 	
 	private static final Logger logger = Logger.getLogger(SessionBean.class);
 	
+	private List<Print> printList = new ArrayList<Print>();
 	
 	public SessionBean(){
-		
+		this.printList = DBService.getInstance().getPrintList();
 	}
-	
-	public void test(){
-		//System.out.println("Request=" + getRequest());
-		//System.out.println("Response=" + getResponse());
-		System.out.println(this.getPageContext().getSession().getAttribute("sessionBean"));
+		
+	public List<Print> getPrintList() {
+		return printList;
+	}
+
+	public void setPrintList(List<Print> printList) {
+		this.printList = printList;
 	}
 }
