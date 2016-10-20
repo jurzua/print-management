@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 import cl.printmanagement.DBService;
 import cl.printmanagement.bo.Print;
 
-
+//AAAAAAAAAAAAA
 public class SessionBean extends JSPWrapper{
 	
 	private static final Logger logger = Logger.getLogger(SessionBean.class);
