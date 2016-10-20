@@ -1,44 +1,21 @@
 package cl.printmanagement.web;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.faces.event.AjaxBehaviorEvent;
+import org.apache.log4j.Logger;
 
-@ManagedBean(eager=true)
-@SessionScoped
-public class SessionBean extends AbstractBean {
 
-	private List<String> msgList = new ArrayList<String>();
+public class SessionBean extends JSPWrapper{
+	
+	private static final Logger logger = Logger.getLogger(SessionBean.class);
+	
 	
 	public SessionBean(){
 		
-		try {
-			System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-			System.out.println("Starting SessionBean!!!");
-			System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-		} catch (Exception e) {
-			addInternalError(e);
-		}
 	}
 	
-	
-	public void listenerCloseMessageDialog(AjaxBehaviorEvent event){
-		System.out.println("listenerCloseMessageDialog");
-		this.msgList = new ArrayList<String>();
-	}
-	
-	public boolean isShowMessageDialog(){
-		return msgList != null && !msgList.isEmpty();
-	}
-
-	public List<String> getMsgList() {
-		return msgList;
-	}
-
-	public void setMsgList(List<String> msgList) {
-		this.msgList = msgList;
+	public void test(){
+		//System.out.println("Request=" + getRequest());
+		//System.out.println("Response=" + getResponse());
+		System.out.println(this.getPageContext().getSession().getAttribute("sessionBean"));
 	}
 }

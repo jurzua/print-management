@@ -7,7 +7,6 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import cl.printmanagement.bo.DBEntry;
@@ -19,7 +18,7 @@ import cl.printmanagement.bo.User;
 */
 public class DBService {
 
-	private static final Logger logger = LogManager.getLogger(DBService.class);
+	private static final Logger logger = Logger.getLogger(DBService.class);
 	
 	public List<Print> getPrintList(){
 		long start = System.currentTimeMillis();
