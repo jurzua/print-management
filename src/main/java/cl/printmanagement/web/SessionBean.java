@@ -16,12 +16,14 @@ public class SessionBean extends JSPWrapper{
 	
 	private List<Print> printList = new ArrayList<Print>();
 	
+	/**
+	 * Contructor, se crea solo una vez
+	 */
 	public SessionBean(){
-		this.printList = DBService.getInstance().getPrintList();
 	}
 		
 	public List<Print> getPrintList() {
-		return printList;
+		return DBService.getInstance().getPrintList();
 	}
 
 	public void setPrintList(List<Print> printList) {
