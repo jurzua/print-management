@@ -24,6 +24,7 @@ import cl.printmanagement.bo.Print;
  * http://localhost:8080/print-management/printServlet?user=jurzua&computer=PC05&printer=Brother_01&document=ontologia.doc
  * http://localhost:8080/print-management/printServlet?user=ricardo&computer=PC06&printer=Lexon_01&document=tesis_template.doc
  * http://localhost:8080/print-management/printServlet?user=ricardo&computer=PC06&printer=Lexon_01&document=tesis.doc
+ * hola
  * 
  * @author jurzua
  *
