@@ -11,8 +11,8 @@
 	
 	<body>
 	
-		<a href="pages/userList.jsp">User List</a></br>
-		<a href="pages/userRegister.jsp">User Register</a></br>
+		<a href="pages/userList.jsp">Lista Usuario</a></br>
+		<a href="pages/userRegister.jsp">Registrar Usuario</a></br>
 	
 		<!-- used http://www.tablesgenerator.com/html_tables -->
 		<table class="tg">

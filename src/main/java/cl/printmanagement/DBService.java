@@ -13,9 +13,7 @@ import cl.printmanagement.bo.DBEntry;
 import cl.printmanagement.bo.Print;
 import cl.printmanagement.bo.User;
 
-/** Hola ricardo
- * Chao ricardo
-*/
+
 public class DBService {
 
 	private static final Logger logger = Logger.getLogger(DBService.class);

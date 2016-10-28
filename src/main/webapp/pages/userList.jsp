@@ -9,7 +9,29 @@
 	</head>
 	
 	<body>
-		<h1>User List</h1>
-		
+		<h1>Lista Usuarios</h1>
+			<a href="pages/prints.jsp">Volver</a></br>
+		<a href="pages/userRegister.jsp">Registrar Usuario</a></br>
+	
+		<!-- used http://www.tablesgenerator.com/html_tables -->
+		<table class="tg">
+			<tr>
+				<th>Nombre Usuario</th>
+				<th>Funcion</th>
+				<th>Computador</th>
+				<th>Numero de Documentos Impresos</th>
+			</tr>
+			
+			<% for(Print print : sessionBean.getPrintList()) { %>
+			
+			<tr>
+				<td><%=print.getUser() %></td>
+				<td><%=print.getFunction() %></td>
+				<td><%=print.getComputer() %></td>
+				<td><%=print.getNumberPrints() %></td>
+			</tr>
+			
+			<% } %>
+		</table>
 	</body>
 </html>
