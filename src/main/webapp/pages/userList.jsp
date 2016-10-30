@@ -1,3 +1,4 @@
+<%@page import="cl.printmanagement.bo.User"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -25,7 +26,11 @@
 			<% for(User user : sessionBean.getUserList()) { %>
 			
 			<tr>
-				<td><%=user.getName() %></td>
+				<td><%=user.getFirstName() %></td>
+				<td><%=user.getLastName() %></td>
+				<td><%=user.getUserName() %></td>
+				<td><%=user.getRole() %></td>
+				<td><%=sessionBean.getPrintNumber(user.getUserName()) %></td>
 			</tr>
 			
 			<% } %>
