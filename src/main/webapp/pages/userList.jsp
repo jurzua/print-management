@@ -22,13 +22,10 @@
 				<th>Numero de Documentos Impresos</th>
 			</tr>
 			
-			<% for(Print print : sessionBean.getPrintList()) { %>
+			<% for(User user : sessionBean.getUserList()) { %>
 			
 			<tr>
-				<td><%=print.getUser() %></td>
-				<td><%=print.getFunction() %></td>
-				<td><%=print.getComputer() %></td>
-				<td><%=print.getNumberPrints() %></td>
+				<td><%=user.getName() %></td>
 			</tr>
 			
 			<% } %>
