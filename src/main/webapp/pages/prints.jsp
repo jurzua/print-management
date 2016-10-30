@@ -11,8 +11,8 @@
 	
 	<body>
 	
-		<a href="pages/userList.jsp">Lista Usuario</a></br>
-		<a href="pages/userRegister.jsp">Registrar Usuario</a></br>
+		<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userList.jsp">Lista Usuario</a></br>
+		<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userRegister.jsp">Registrar Usuario</a></br>
 	
 		<!-- used http://www.tablesgenerator.com/html_tables -->
 		<table class="tg">
@@ -29,7 +29,7 @@
 			<tr>
 				<td><%=print.getFormattedCreationTime() %></td>
 				<td><%=print.getPrinter() %></td>
-				<td><%=print.getUser() %></td>
+				<td><%=print.getUserName() %></td>
 				<td><%=print.getComputer() %></td>
 				<td><%=print.getDocument() %></td>
 			</tr>

@@ -4,7 +4,7 @@ import javax.servlet.jsp.PageContext;
 
 public class JSPWrapper {
 	
-	private PageContext pageContext;
+	protected PageContext pageContext;
 	
 	public static String SESSION_BEAN = "sessionBean";
 	private static ApplicationBean appBean;

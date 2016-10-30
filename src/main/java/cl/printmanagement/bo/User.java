@@ -80,6 +80,8 @@ public class User extends DBEntry implements Serializable{
 	}
 	
 	
-	
+	public String toString(){
+		return "User [userName=" + this.userName + ", password=" + this.password +  ", firstName=" + this.firstName + "]";
+	}
 	
 }

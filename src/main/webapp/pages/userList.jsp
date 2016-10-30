@@ -10,8 +10,8 @@
 	</head>
 	
 	<body>
-			<a href="userRegister.jsp">Registrar Usuario</a></br>
-			<a href="prints.jsp">Volver</a></br>
+			<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userRegister.jsp">Registrar Usuario</a></br>
+			<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/prints.jsp">Volver</a></br>
 		<h1>Lista Usuarios</h1>
 			
 		<!-- used http://www.tablesgenerator.com/html_tables -->

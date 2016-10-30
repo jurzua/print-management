@@ -10,9 +10,27 @@
 	</head>
 	
 	<body>
-		<a href="userList.jsp">Lista Usuario</a></br>
-		<a href="login.jsp">Volver</a></br>
+		<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userList.jsp">Lista Usuario</a></br>
+		<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/login.jsp">Volver</a></br>
 		
 		<h1>Registrar Usuario</h1>
+		
+		<form action="registerExecution.jsp" method="GET">
+			
+			<table>
+				<tr>
+					<td>Nombre usuario</td>
+					<td><input type="text" name="userName" /></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="text" name="password" /></td>
+				</tr>
+			</table>
+			
+			
+			<input type="submit" value="Guardar" />
+		</form>
+		
 	</body>
 </html>
