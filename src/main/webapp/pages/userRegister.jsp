@@ -10,8 +10,8 @@
 	</head>
 	
 	<body>
-		<a href="pages/userList.jsp">Lista Usuario</a></br>
-		<a href="pages/prints.jsp">Volver</a></br>
+		<a href="userList.jsp">Lista Usuario</a></br>
+		<a href="login.jsp">Volver</a></br>
 		
 		<h1>Registrar Usuario</h1>
 	</body>
