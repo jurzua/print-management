@@ -12,8 +12,14 @@ import javax.persistence.Table;
 public class User extends DBEntry implements Serializable{
 	private static final long serialVersionUID = 1434080883393989640L;
 	
-	@Column(name = "name")
-	private String name;
+	@Column(name = "userName")
+	private String userName;
+	
+	@Column(name = "firstName")
+	private String firstName;
+	
+	@Column(name = "lastName")
+	private String lastName;
 	
 	@Column(name = "email")
 	private String email;
@@ -23,14 +29,30 @@ public class User extends DBEntry implements Serializable{
 	private String role;
 	
 	@Column(name = "password")
-	private String password;
+	private String password;	
 
-	public String getName() {
-		return name;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getEmail() {

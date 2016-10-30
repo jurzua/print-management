@@ -14,8 +14,8 @@ public class Print extends DBEntry implements Serializable{
 	@Column(name = "document")
 	private String document;
 	
-	@Column(name = "user")
-	private String user;
+	@Column(name = "userName")
+	private String userName;
 	
 	@Column(name = "printer")
 	private String printer;
@@ -29,14 +29,14 @@ public class Print extends DBEntry implements Serializable{
 
 	public void setDocument(String document) {
 		this.document = document;
+	}	
+
+	public String getUserName() {
+		return userName;
 	}
 
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPrinter() {
@@ -57,6 +57,6 @@ public class Print extends DBEntry implements Serializable{
 	
 	@Override
 	public String toString(){
-		return "Print [user="+ user +", computer="+ computer +", printer="+ printer +", document=" +document+ "]";
+		return "Print [userName="+ userName +", computer="+ computer +", printer="+ printer +", document=" +document+ "]";
 	}
 }

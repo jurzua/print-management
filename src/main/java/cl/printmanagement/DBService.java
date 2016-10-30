@@ -27,6 +27,36 @@ public class DBService {
 		return instance;
 	}
 	
+	public List<Print> getPrintList(String userName){
+		long start = System.currentTimeMillis();
+		List<Print> list = new ArrayList<Print>();
+		
+		EntityManager em = PersistenceManagerCore.getEntityManager();
+		try {
+			em.getTransaction().begin();
+			try {
+				Query query = em.createQuery("from Print where userName = :userName");
+				query.setParameter("userName", userName);
+				list = (List<Print>)query.getResultList();
+				em.getTransaction().commit();
+			} catch (Exception e) {
+				if (em.getTransaction().isActive()) {
+		            em.getTransaction().rollback();
+		        }
+				throw e;
+			}
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			em.close();
+		}
+		
+		long diff = System.currentTimeMillis() - start;  
+		logger.info("[size="+ list.size() +", time(ms)=" + diff + "]");
+		return list;	
+	}
+	
+	
 	public List<Print> getPrintList(){
 		long start = System.currentTimeMillis();
 		List<Print> list = new ArrayList<Print>();

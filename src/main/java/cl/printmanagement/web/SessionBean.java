@@ -1,7 +1,6 @@
 package cl.printmanagement.web;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -30,6 +29,11 @@ public class SessionBean extends JSPWrapper{
 		return DBService.getInstance().getUserList();
 	}
 	
+	public int getPrintNumber(String userName){
+		List<Print> list = DBService.getInstance().getPrintList(userName);
+		return list.size();
+	}
+	
 	public void registerUser(){
 		String name = null;
 		String password = null;
@@ -37,7 +41,7 @@ public class SessionBean extends JSPWrapper{
 		
 		User user = new User();
 		user.setPassword(password);
-		user.setName(name);
+		user.setUserName(name);
 		user.setEmail(email);
 		
 		try {
