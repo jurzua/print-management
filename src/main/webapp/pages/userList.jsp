@@ -9,6 +9,7 @@
 	</head>
 	
 	<body>
+	
 		<h1>Lista Usuarios</h1>
 			<a href="pages/prints.jsp">Volver</a></br>
 		<a href="pages/userRegister.jsp">Registrar Usuario</a></br>
