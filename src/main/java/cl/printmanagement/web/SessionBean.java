@@ -20,6 +20,27 @@ public class SessionBean extends JSPWrapper {
 	 */
 	public SessionBean() {
 	}
+	
+	public User loadUser(){
+		
+		String userIdString = this.pageContext.getRequest().getParameter("userId");
+		Long userId = Long.parseLong(userIdString);
+		User user = DBService.getInstance().getUser(userId);
+		
+		return user;
+	}
+	
+	public void saveEditingUser(){
+		
+		String userIdString = this.pageContext.getRequest().getParameter("userId");
+		Long userId = Long.parseLong(userIdString);
+		User user = DBService.getInstance().getUser(userId);
+		
+		
+		
+		
+		
+	}
 
 	public List<Print> getPrintList() {
 		return DBService.getInstance().getPrintList();
@@ -41,20 +62,34 @@ public class SessionBean extends JSPWrapper {
 		for(User user : DBService.getInstance().getUserList()){
 			if(user.getPassword().equals(password) && user.getUserName().equals(userName)){
 				this.currentUser = user;
+				System.out.println("User found " + this.currentUser);
 			}
 		}
+		if(this.currentUser == null){
+			System.out.println("User NOT found " + this.currentUser);
+		}
 		return currentUser != null;
+	}
+	
+	public void logout(){
+		this.currentUser = null;
 	}
 
 	public void createUser() {
 
 		String userName = this.pageContext.getRequest().getParameter("userName");
 		String password = this.pageContext.getRequest().getParameter("password");
-
+		String role = this.pageContext.getRequest().getParameter("role");
+		String firstName = this.pageContext.getRequest().getParameter("firstName");
+		String lastName = this.pageContext.getRequest().getParameter("lastName");
+		
 		User user = new User();
 		user.setPassword(password);
 		user.setUserName(userName);
-
+		user.setRole(role);
+		user.setLastName(lastName);
+		user.setFirstName(firstName);
+		
 		try {
 			DBService.getInstance().saveDBEntry(user);
 			System.out.println("User saved OK " + user);
@@ -62,11 +97,6 @@ public class SessionBean extends JSPWrapper {
 			e.printStackTrace();
 		}
 
-	}
-	
-	public void loginUser(){
-		
-		
 	}
 
 	public User getCurrentUser() {

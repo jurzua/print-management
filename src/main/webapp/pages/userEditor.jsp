@@ -1,9 +1,15 @@
-<%@page import="cl.printmanagement.bo.Print"%>
+<%@page import="cl.printmanagement.bo.User"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <jsp:useBean id="sessionBean" class="cl.printmanagement.web.SessionBean" scope="session" />
 <jsp:setProperty name="sessionBean" property="pageContext" value="${pageContext}" />
+
+<%
+	User user = sessionBean.loadUser();
+%>
+
+
 
 <html>
 	<head>
@@ -13,14 +19,16 @@
 	<body>
 		<jsp:include page="menu.jsp"/>
 		
-		<h1>Registrar Usuario</h1>
+		<h1>Editar Usuario</h1>
 		
 		<form action="registerExecution.jsp" method="GET">
+			
+			<input type="hidden" name="userId" value="<%=user.getId()%>"/>
 			
 			<table>
 				<tr>
 					<td>Nombre usuario</td>
-					<td><input type="text" name="userName" /></td>
+					<td><input type="text" name="userName" value="<%=user.getUserName() %>" /></td>
 				</tr>
 				<tr>
 					<td>Nombre</td>
@@ -50,4 +58,3 @@
 		</form>
 		
 	</body>
-</html>

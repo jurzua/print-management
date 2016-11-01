@@ -113,6 +113,32 @@ public class DBService {
 		return list;		
 	}
 	
+	public User getUser(Long id){
+		User user = null;
+		EntityManager em = PersistenceManagerCore.getEntityManager();
+		try {
+			em.getTransaction().begin();
+			try {
+				Query query = em.createQuery("from User where id = :id");
+				query.setParameter("id", id);
+				List<User> list = (List<User>)query.getResultList();
+				user = (!list.isEmpty()) ? list.get(0) : null;
+				em.getTransaction().commit();
+			} catch (Exception e) {
+				if (em.getTransaction().isActive()) {
+		            em.getTransaction().rollback();
+		        }
+				throw e;
+			}
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			em.close();
+		}
+		return user;
+	}
+	
+	
 	public User login(String email, String password){
 		User user = null;
 		EntityManager em = PersistenceManagerCore.getEntityManager();
@@ -120,10 +146,10 @@ public class DBService {
 			em.getTransaction().begin();
 			try {
 				Query query = em.createQuery("from User where email = :email and password = :password");
-				List<User> list = (List<User>)query.getResultList();
 				query.setParameter("email", email);
 				query.setParameter("password", password);
-				user = (list.isEmpty()) ? list.get(0) : null;
+				List<User> list = (List<User>)query.getResultList();
+				user = (!list.isEmpty()) ? list.get(0) : null;
 				em.getTransaction().commit();
 			} catch (Exception e) {
 				if (em.getTransaction().isActive()) {

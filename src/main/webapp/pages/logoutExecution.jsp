@@ -2,11 +2,7 @@
 <jsp:setProperty name="sessionBean" property="pageContext" value="${pageContext}" />
 
 <% 
-	sessionBean.createUser(); 
-	response.sendRedirect(sessionBean.getAppBean().getContextRoot() + "/pages/userList.jsp");
+	sessionBean.logout();
+	
+	response.sendRedirect(sessionBean.getAppBean().getContextRoot() + "/pages/prints.jsp");
 %>
-
-
-
-
-

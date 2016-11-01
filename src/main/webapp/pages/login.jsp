@@ -3,11 +3,16 @@
 
 <html>
 	<head>
+		<jsp:include page="head.jsp"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
     </head>
     <body>
-        <form method="post" action="login.jsp">
+    	
+    	<jsp:include page="menu.jsp"/>
+    	
+        <form method="post" action="loginExecution.jsp">
+        	<table>
                 <thead>
                     <tr>
                         <th colspan="2">Ingrese Aqui sus Datos</th>
@@ -24,12 +29,9 @@
                     </tr>
                     <tr>
                         <td><input type="submit" value="Login" /></td>
-                        <td><input type="reset" value="Reset" /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Usuario Incorrecto <a href="userRegister.jsp">Registrarse Aqui</a></td>
                     </tr>
                 </tbody>
+			</table>
         </form>
     </body>
 </html>

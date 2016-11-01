@@ -7,11 +7,13 @@
 
 <html>
 	<head>
+		<jsp:include page="head.jsp"/>
 	</head>
 	
 	<body>
-			<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userRegister.jsp">Registrar Usuario</a></br>
-			<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/prints.jsp">Volver</a></br>
+		
+		<jsp:include page="menu.jsp"/>
+		
 		<h1>Lista Usuarios</h1>
 			
 		<!-- used http://www.tablesgenerator.com/html_tables -->
@@ -22,6 +24,7 @@
 				<th>Nombre Usuario</th>
 				<th>Rol</th>
 				<th>Numero de Documentos Impresos</th>
+				<th>Acciones</th>
 			</tr>
 			
 			<% for(User user : sessionBean.getUserList()) { %>
@@ -32,6 +35,7 @@
 				<td><%=user.getUserName() %></td>
 				<td><%=user.getRole() %></td>
 				<td><%=sessionBean.getPrintNumber(user.getUserName()) %></td>
+				<td><a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userEditor.jsp?userId=<%=user.getId() %>">Editar</a></td>
 			</tr>
 			
 			<% } %>

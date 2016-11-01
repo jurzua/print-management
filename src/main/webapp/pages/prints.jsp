@@ -7,12 +7,14 @@
 
 <html>
 	<head>
+		<jsp:include page="head.jsp"/>
 	</head>
 	
 	<body>
 	
-		<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userList.jsp">Lista Usuario</a></br>
-		<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userRegister.jsp">Registrar Usuario</a></br>
+		<jsp:include page="menu.jsp"/>
+		
+		<h1>Prints</h1>
 	
 		<!-- used http://www.tablesgenerator.com/html_tables -->
 		<table class="tg">
