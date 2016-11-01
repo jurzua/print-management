@@ -63,6 +63,11 @@ public class SessionBean extends JSPWrapper {
 		}
 
 	}
+	
+	public void loginUser(){
+		
+		
+	}
 
 	public User getCurrentUser() {
 		return currentUser;
