@@ -17,9 +17,10 @@
 		<!-- used http://www.tablesgenerator.com/html_tables -->
 		<table class="tg">
 			<tr>
+				<th>Nombre</th>
+				<th>Apellido</th>
 				<th>Nombre Usuario</th>
-				<th>Funcion</th>
-				<th>Computador</th>
+				<th>Rol</th>
 				<th>Numero de Documentos Impresos</th>
 			</tr>
 			

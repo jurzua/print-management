@@ -23,6 +23,18 @@
 					<td><input type="text" name="userName" /></td>
 				</tr>
 				<tr>
+					<td>Nombre</td>
+					<td><input type="text" name="firstName" /></td>
+				</tr>
+				<tr>
+					<td>Apellido</td>
+					<td><input type="text" name="secondName" /></td>
+				</tr>
+				<tr>
+					<td>Rol</td>
+					<td><input type="text" name="rol" /></td>
+				</tr>
+				<tr>
 					<td>Password</td>
 					<td><input type="text" name="password" /></td>
 				</tr>
