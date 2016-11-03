@@ -32,11 +32,11 @@
 				</tr>
 				<tr>
 					<td>Nombre</td>
-					<td><input type="text" name="firstName" /></td>
+					<td><input type="text" name="firstName" value="<%=user.getFirstName() %>"/></td>
 				</tr>
 				<tr>
 					<td>Apellido</td>
-					<td><input type="text" name="lastName" /></td>
+					<td><input type="text" name="lastName" value="<%=user.getLastName() %>"/></td>
 				</tr>
 				<tr>
 					<td>Rol</td>
@@ -49,7 +49,7 @@
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="text" name="password" /></td>
+					<td><input type="text" name="password" value="<%=user.getPassword() %>"/></td>
 				</tr>
 			</table>
 			

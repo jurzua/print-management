@@ -25,6 +25,7 @@
 				<th>Rol</th>
 				<th>Numero de Documentos Impresos</th>
 				<th>Acciones</th>
+				<th>Eliminar</th>
 			</tr>
 			
 			<% for(User user : sessionBean.getUserList()) { %>
@@ -36,6 +37,7 @@
 				<td><%=user.getRole() %></td>
 				<td><%=sessionBean.getPrintNumber(user.getUserName()) %></td>
 				<td><a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userEditor.jsp?userId=<%=user.getId() %>">Editar</a></td>
+				<td><a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userDelete.jsp?userId=<%=user.getId() %>">Eliminar</a></td>
 			</tr>
 			
 			<% } %>

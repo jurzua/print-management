@@ -36,10 +36,7 @@ public class SessionBean extends JSPWrapper {
 		Long userId = Long.parseLong(userIdString);
 		User user = DBService.getInstance().getUser(userId);
 		
-		
-		
-		
-		
+
 	}
 
 	public List<Print> getPrintList() {
