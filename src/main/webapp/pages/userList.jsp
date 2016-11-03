@@ -23,6 +23,7 @@
 				<th>Apellido</th>
 				<th>Nombre Usuario</th>
 				<th>Rol</th>
+				<th>Correo</th>
 				<th>Numero de Documentos Impresos</th>
 				<th>Acciones</th>
 				<th>Eliminar</th>
@@ -35,6 +36,7 @@
 				<td><%=user.getLastName() %></td>
 				<td><%=user.getUserName() %></td>
 				<td><%=user.getRole() %></td>
+				<td><%=user.getEmail() %></td>
 				<td><%=sessionBean.getPrintNumber(user.getUserName()) %></td>
 				<td><a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userEditor.jsp?userId=<%=user.getId() %>">Editar</a></td>
 				<td><a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userDelete.jsp?userId=<%=user.getId() %>">Eliminar</a></td>

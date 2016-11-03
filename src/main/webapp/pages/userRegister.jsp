@@ -40,6 +40,10 @@
 					</td>
 				</tr>
 				<tr>
+					<td>Correo</td>
+					<td><input type="text" name="email" /></td>
+				</tr>
+				<tr>
 					<td>Password</td>
 					<td><input type="text" name="password" /></td>
 				</tr>

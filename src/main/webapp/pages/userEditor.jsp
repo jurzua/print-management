@@ -21,7 +21,7 @@
 		
 		<h1>Editar Usuario</h1>
 		
-		<form action="registerExecution.jsp" method="GET">
+		<form action="editUserExecution.jsp" method="GET">
 			
 			<input type="hidden" name="userId" value="<%=user.getId()%>"/>
 			
@@ -47,6 +47,10 @@
 						</select> 
 					</td>
 				</tr>
+				/**<tr>
+					*<td>Correo</td>
+					*<td><input type="text" name="email" value="<%=user.getEmail() %>"/></td>
+				</tr>**/
 				<tr>
 					<td>Password</td>
 					<td><input type="text" name="password" value="<%=user.getPassword() %>"/></td>
