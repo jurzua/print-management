@@ -30,6 +30,21 @@ public class SessionBean extends JSPWrapper {
 		return user;
 	}
 	
+	/**
+	 * Este método es usado para eliminar un usuario. 
+	 * El usuario es selecionado por su id que viene como parametro de la request.
+	 */
+	public void removeUser(){
+		String userIdString = this.pageContext.getRequest().getParameter("userId");
+		Long userId = Long.parseLong(userIdString);
+		User user = DBService.getInstance().getUser(userId);
+		try {
+			DBService.getInstance().removeDBEntry(user);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void saveEditingUser(){
 		
 		String userIdString = this.pageContext.getRequest().getParameter("userId");
