@@ -24,6 +24,7 @@
 				<th>Usuario</th>
 				<th>Computador</th>
 				<th>Documento</th>
+				<th>Número de páginas</th>
 			</tr>
 			
 			<% for(Print print : sessionBean.getPrintList()) { %>
@@ -34,6 +35,7 @@
 				<td><%=print.getUserName() %></td>
 				<td><%=print.getComputer() %></td>
 				<td><%=print.getDocument() %></td>
+				<td><%=print.getPagesNumber() %></td>
 			</tr>
 			
 			<% } %>

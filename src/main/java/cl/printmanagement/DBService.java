@@ -188,6 +188,29 @@ public class DBService {
 		logger.info("Saving " + entity.toString());
 	}
 	
+	public void removeDBEntry(DBEntry entity) throws Exception {
+		logger.info("Prepering to save " + entity.toString());
+		
+		EntityManager em = PersistenceManagerCore.getEntityManager();
+		try {
+			em.getTransaction().begin();
+			try {		
+				em.remove(entity);
+				em.getTransaction().commit();
+			} catch (Exception e) {
+				if (em.getTransaction().isActive()) {
+		            em.getTransaction().rollback();
+		        }
+				throw e;
+			}
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			em.close();
+		}
+		logger.info("Saving " + entity.toString());
+	}
+	
 	private void saveDBEntry0(EntityManager em, DBEntry entity) throws Exception {
 		boolean isPersistent = entity.isPersistent();
 		Date timeStamp = new Date();

@@ -26,10 +26,16 @@
 			<td>
 				<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/login.jsp">Login</a>
 			</td>
+		<% } %>
+		
+		
+		
+		<% if(sessionBean.isUserAdmin()){ %>
 			<td>
-				<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userRegister.jsp">Registrarse</a>
+				<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userRegister.jsp">Crear usuario</a>
 			</td>
 		<% } %>
+		
 		
 	</tr>
 </table>
