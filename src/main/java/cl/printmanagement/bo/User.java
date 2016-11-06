@@ -30,6 +30,14 @@ public class User extends DBEntry implements Serializable{
 	
 	@Column(name = "password")
 	private String password;	
+	
+	public boolean isAdmin(){
+		return ("admin".equals(this.role));
+	}
+	
+	public boolean isPersonal(){
+		return ("personal".equals(this.role));
+	}
 
 	public String getUserName() {
 		return userName;

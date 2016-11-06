@@ -30,6 +30,18 @@ public class SessionBean extends JSPWrapper {
 		return user;
 	}
 	
+	public boolean isLoggedIn(){
+		return (this.currentUser != null);
+	}
+	
+	public boolean isUserAdmin(){
+		return this.currentUser != null && this.currentUser.isAdmin();
+	}
+	
+	public boolean isUserPersonal(){
+		return this.currentUser != null && this.currentUser.isPersonal();
+	}
+	
 	/**
 	 * Este método es usado para eliminar un usuario. 
 	 * El usuario es selecionado por su id que viene como parametro de la request.

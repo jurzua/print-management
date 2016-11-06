@@ -23,6 +23,17 @@ public class Print extends DBEntry implements Serializable{
 	@Column(name = "computer")
 	private String computer;
 
+	@Column(name = "pagesNumber")
+	private Integer pagesNumber;
+	
+	public Integer getPagesNumber() {
+		return pagesNumber;
+	}
+
+	public void setPagesNumber(Integer pagesNumber) {
+		this.pagesNumber = pagesNumber;
+	}
+
 	public String getDocument() {
 		return document;
 	}

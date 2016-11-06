@@ -39,7 +39,7 @@
 				<td><%=user.getEmail() %></td>
 				<td><%=sessionBean.getPrintNumber(user.getUserName()) %></td>
 				<td><a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userEditor.jsp?userId=<%=user.getId() %>">Editar</a></td>
-				<td><a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userDelete.jsp?userId=<%=user.getId() %>">Eliminar</a></td>
+				<td><a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userDeleteExecution.jsp?userId=<%=user.getId() %>">Eliminar</a></td>
 			</tr>
 			
 			<% } %>

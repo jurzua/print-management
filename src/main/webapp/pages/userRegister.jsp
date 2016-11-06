@@ -13,7 +13,7 @@
 	<body>
 		<jsp:include page="menu.jsp"/>
 		
-		<h1>Registrar Usuario</h1>
+		<h1>Crear Usuario</h1>
 		
 		<form action="registerExecution.jsp" method="GET">
 			
