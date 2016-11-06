@@ -22,6 +22,9 @@ public class Print extends DBEntry implements Serializable{
 	
 	@Column(name = "computer")
 	private String computer;
+	
+	@Column(name = "numeroHojas")
+	private String numeroHojas;
 
 	public String getDocument() {
 		return document;
@@ -53,6 +56,14 @@ public class Print extends DBEntry implements Serializable{
 
 	public void setComputer(String computer) {
 		this.computer = computer;
+	}
+	
+	public String getNumeroHojas() {
+		return numeroHojas;
+	}
+
+	public void setNumeroHojas(String numeroHojas) {
+		this.computer = numeroHojas;
 	}
 	
 	@Override

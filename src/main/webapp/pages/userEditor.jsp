@@ -47,10 +47,10 @@
 						</select> 
 					</td>
 				</tr>
-				/**<tr>
-					*<td>Correo</td>
-					*<td><input type="text" name="email" value="<%=user.getEmail() %>"/></td>
-				</tr>**/
+				<tr>
+					<td>Correo</td>
+					<td><input type="text" name="email" value="<%=user.getEmail() %>"/></td>
+				</tr>
 				<tr>
 					<td>Password</td>
 					<td><input type="text" name="password" value="<%=user.getPassword() %>"/></td>

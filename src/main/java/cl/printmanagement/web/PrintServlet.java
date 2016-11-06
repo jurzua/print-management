@@ -25,7 +25,7 @@ import cl.printmanagement.bo.Print;
  * http://localhost:8080/print-management/printServlet?userName=ricardo&computer=PC06&printer=Lexon_01&document=tesis.doc
  * 
  * 
- * @author jurzua
+ * 
  *
  */
 
