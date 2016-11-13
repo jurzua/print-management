@@ -4,7 +4,7 @@
 <% 
 	sessionBean.login(); 
 	if(sessionBean.getCurrentUser() != null){
-		response.sendRedirect(sessionBean.getAppBean().getContextRoot() + "/pages/userList.jsp");
+		response.sendRedirect(sessionBean.getAppBean().getContextRoot() + "/pages/home.jsp");
 	}else{
 		response.sendRedirect(sessionBean.getAppBean().getContextRoot() + "/pages/login.jsp");	
 	}
