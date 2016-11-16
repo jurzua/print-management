@@ -44,18 +44,23 @@ public class PrintServlet extends HttpServlet {
 		print.setComputer(request.getParameter("computer"));
 		print.setDocument(request.getParameter("document"));
 		print.setPrinter(request.getParameter("printer"));
+		print.setPrinter(request.getParameter("jobId"));
 		
 		logger.info("Trying to insert " + print);
 		
 		PrintWriter out = response.getWriter();
 		try {
-			DBService.getInstance().saveDBEntry(print);
-			out.print("The print has been saved ");
+			if(DBService.getInstance().getPrint(print.getJobId()) == null){
+				DBService.getInstance().saveDBEntry(print);
+				out.print("Print saved. " + print.toString());
+			}else{
+				out.print("Print NO saved. JobId exists already. " + print.toString());
+			}
 			out.print(print.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.error(e);
-			out.println(e.toString());
+			out.println("Internal Error in print-manager service\n" + e.toString());
 		}
 		
 		out.close();

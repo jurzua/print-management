@@ -23,6 +23,9 @@ public class Print extends DBEntry implements Serializable{
 	@Column(name = "computer")
 	private String computer;
 
+	@Column(name = "jobId")
+	private String jobId;
+	
 	public String getDocument() {
 		return document;
 	}
@@ -55,8 +58,16 @@ public class Print extends DBEntry implements Serializable{
 		this.computer = computer;
 	}
 	
+	public String getJobId() {
+		return jobId;
+	}
+
+	public void setJobId(String jobId) {
+		this.jobId = jobId;
+	}
+
 	@Override
 	public String toString(){
-		return "Print [userName="+ userName +", computer="+ computer +", printer="+ printer +", document=" +document+ "]";
+		return "Print [jobId="+jobId+", userName="+ userName +", computer="+ computer +", printer="+ printer +", document=" +document+ "]";
 	}
 }

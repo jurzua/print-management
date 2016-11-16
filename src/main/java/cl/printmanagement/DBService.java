@@ -1,5 +1,6 @@
 package cl.printmanagement;
 
+import java.awt.PrintJob;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -136,6 +137,31 @@ public class DBService {
 			em.close();
 		}
 		return user;
+	}
+	
+	public Print getPrint(String jobId){
+		Print print = null;
+		EntityManager em = PersistenceManagerCore.getEntityManager();
+		try {
+			em.getTransaction().begin();
+			try {
+				Query query = em.createQuery("from Print where jobId = :jobId");
+				query.setParameter("jobId", jobId);
+				List<Print> list = (List<Print>)query.getResultList();
+				print = (!list.isEmpty()) ? list.get(0) : null;
+				em.getTransaction().commit();
+			} catch (Exception e) {
+				if (em.getTransaction().isActive()) {
+		            em.getTransaction().rollback();
+		        }
+				throw e;
+			}
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			em.close();
+		}
+		return print;
 	}
 	
 	
