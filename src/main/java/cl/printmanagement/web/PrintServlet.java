@@ -16,16 +16,16 @@ import cl.printmanagement.bo.Print;
 
 /**
  * 
- * http://localhost:8080/print-management/printServlet?userName=jurzua&computer=PC01&printer=Lexon_01&document=tesis.docx
- * http://localhost:8080/print-management/printServlet?userName=rcontreras&computer=PC0X&printer=Brother_01&document=tesis.doc
- * http://localhost:8080/print-management/printServlet?userName=kjara&computer=PC04&printer=Brother_01&document=viajes.doc
- * http://localhost:8080/print-management/printServlet?userName=jperez&computer=PC04&printer=Lexon_01&document=lujos.doc
- * http://localhost:8080/print-management/printServlet?userName=jurzua&computer=PC05&printer=Brother_01&document=ontologia.doc
- * http://localhost:8080/print-management/printServlet?userName=ricardo&computer=PC06&printer=Lexon_01&document=tesis_template.doc
- * http://localhost:8080/print-management/printServlet?userName=ricardo&computer=PC06&printer=Lexon_01&document=tesis.doc
+ * http://localhost:8080/print-management/printServlet?userName=jurzua&computer=PC01&printer=Lexon_01&document=tesis.docx&pagesNumber=1
+ * http://localhost:8080/print-management/printServlet?userName=rcontreras&computer=PC0X&printer=Brother_01&document=tesis.doc&pagesNumber=10
+ * http://localhost:8080/print-management/printServlet?userName=kjara&computer=PC04&printer=Brother_01&document=viajes.doc&pagesNumber=50
+ * http://localhost:8080/print-management/printServlet?userName=jperez&computer=PC04&printer=Lexon_01&document=lujos.doc&pagesNumber=46
+ * http://localhost:8080/print-management/printServlet?userName=jurzua&computer=PC05&printer=Brother_01&document=ontologia.doc&pagesNumber=156
+ * http://localhost:8080/print-management/printServlet?userName=ricardo&computer=PC06&printer=Lexon_01&document=tesis_template.doc&pagesNumber=1
+ * http://localhost:8080/print-management/printServlet?userName=ricardo&computer=PC06&printer=Lexon_01&document=tesis.doc&pagesNumber=4
  * 
  * 
- * @author jurzua
+ * 
  *
  */
 
@@ -45,6 +45,11 @@ public class PrintServlet extends HttpServlet {
 		print.setDocument(request.getParameter("document"));
 		print.setPrinter(request.getParameter("printer"));
 		print.setPrinter(request.getParameter("jobId"));
+		
+		String pagesNumberS = request.getParameter("pagesNumber");
+		Integer pagesNumber = Integer.parseInt(pagesNumberS);
+		print.setPagesNumber(pagesNumber);
+		
 		
 		logger.info("Trying to insert " + print);
 		

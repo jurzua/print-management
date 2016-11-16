@@ -30,12 +30,59 @@ public class SessionBean extends JSPWrapper {
 		return user;
 	}
 	
+	public boolean isLoggedIn(){
+		return (this.currentUser != null);
+	}
+	
+	public boolean isUserAdmin(){
+		return this.currentUser != null && this.currentUser.isAdmin();
+	}
+	
+	public boolean isUserPersonal(){
+		return this.currentUser != null && this.currentUser.isPersonal();
+	}
+	
+	/**
+	 * Este método es usado para eliminar un usuario. 
+	 * El usuario es selecionado por su id que viene como parametro de la request.
+	 */
+	public void removeUser(){
+		String userIdString = this.pageContext.getRequest().getParameter("userId");
+		Long userId = Long.parseLong(userIdString);
+		User user = DBService.getInstance().getUser(userId);
+		try {
+			DBService.getInstance().removeDBEntry(user);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void saveEditingUser(){
 		
 		String userIdString = this.pageContext.getRequest().getParameter("userId");
 		Long userId = Long.parseLong(userIdString);
 		User user = DBService.getInstance().getUser(userId);
 		
+		String userName = this.pageContext.getRequest().getParameter("userName");
+		String password = this.pageContext.getRequest().getParameter("password");
+		String role = this.pageContext.getRequest().getParameter("role");
+		String email = this.pageContext.getRequest().getParameter("email");
+		String firstName = this.pageContext.getRequest().getParameter("firstName");
+		String lastName = this.pageContext.getRequest().getParameter("lastName");
+
+		user.setPassword(password);
+		user.setUserName(userName);
+		user.setRole(role);
+		user.setEmail(email);
+		user.setLastName(lastName);
+		user.setFirstName(firstName);
+		
+		try {
+			DBService.getInstance().saveDBEntry(user);
+			System.out.println("Edit User OK " + user);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 
@@ -77,6 +124,7 @@ public class SessionBean extends JSPWrapper {
 		String userName = this.pageContext.getRequest().getParameter("userName");
 		String password = this.pageContext.getRequest().getParameter("password");
 		String role = this.pageContext.getRequest().getParameter("role");
+		String email = this.pageContext.getRequest().getParameter("email");
 		String firstName = this.pageContext.getRequest().getParameter("firstName");
 		String lastName = this.pageContext.getRequest().getParameter("lastName");
 		
@@ -84,6 +132,7 @@ public class SessionBean extends JSPWrapper {
 		user.setPassword(password);
 		user.setUserName(userName);
 		user.setRole(role);
+		user.setEmail(email);
 		user.setLastName(lastName);
 		user.setFirstName(firstName);
 		

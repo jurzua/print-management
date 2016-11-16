@@ -3,7 +3,7 @@
   
 	<display-name>ianus-access</display-name>
 	<welcome-file-list>
-		<welcome-file>pages/prints.jsp</welcome-file>
+		<welcome-file>pages/home.jsp</welcome-file>
 	</welcome-file-list>
 
 </web-app>

@@ -8,11 +8,18 @@
 <table>
 	<tr>
 		<td>
-			<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/prints.jsp">Home</a>
+			<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/home.jsp">Home</a>
 		</td>
-		<td>
-			<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userList.jsp">Lista Usuario</a>
-		</td>
+		<% if(sessionBean.getCurrentUser() != null) {%>
+			<td>
+				<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/prints.jsp">Impresiones</a>
+			</td>
+		<% } %>
+		<% if(sessionBean.isUserAdmin()){ %>
+			<td>
+				<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userList.jsp">Lista Usuario</a>
+			</td>
+		<% } %>
 
 		
 		<% if(sessionBean.getCurrentUser() != null) {%>
@@ -26,11 +33,16 @@
 			<td>
 				<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/login.jsp">Login</a>
 			</td>
-			<td>
-				<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userRegister.jsp">Registrarse</a>
-			</td>
 		<% } %>
 		
+		
+		
+		<% if(sessionBean.isUserAdmin()){ %>
+			<td>
+				<a href="<%=sessionBean.getAppBean().getContextRoot() %>/pages/userRegister.jsp">Crear usuario</a>
+			</td>
+		<% } %>
+
 	</tr>
 </table>
 

@@ -4,5 +4,5 @@
 <% 
 	sessionBean.logout();
 	
-	response.sendRedirect(sessionBean.getAppBean().getContextRoot() + "/pages/prints.jsp");
+	response.sendRedirect(sessionBean.getAppBean().getContextRoot() + "/pages/home.jsp");
 %>
