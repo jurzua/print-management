@@ -55,11 +55,14 @@ public class PrintServlet extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		try {
-			if(DBService.getInstance().getPrint(print.getJobId()) == null){
-				DBService.getInstance().saveDBEntry(print);
-				out.print("Print saved. " + print.toString());
+			Print oldPrint = DBService.getInstance().getPrint(print.getJobId(), print.getComputer());
+			if(oldPrint != null){
+				oldPrint.setPagesNumber(print.getPagesNumber());
+				DBService.getInstance().saveDBEntry(oldPrint);
+				out.print("Print updated, found a print object with same jobId and computer. " + oldPrint.toString());
 			}else{
-				out.print("Print NO saved. JobId exists already. " + print.toString());
+				DBService.getInstance().saveDBEntry(print);
+				out.print("Print saved as new. " + print.toString());
 			}
 			out.print(print.toString());
 		} catch (Exception e) {

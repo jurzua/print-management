@@ -139,14 +139,15 @@ public class DBService {
 		return user;
 	}
 	
-	public Print getPrint(String jobId){
+	public Print getPrint(String jobId, String computer){
 		Print print = null;
 		EntityManager em = PersistenceManagerCore.getEntityManager();
 		try {
 			em.getTransaction().begin();
 			try {
-				Query query = em.createQuery("from Print where jobId = :jobId");
+				Query query = em.createQuery("from Print where jobId = :jobId and computer = :computer");
 				query.setParameter("jobId", jobId);
+				query.setParameter("computer", computer);
 				List<Print> list = (List<Print>)query.getResultList();
 				print = (!list.isEmpty()) ? list.get(0) : null;
 				em.getTransaction().commit();

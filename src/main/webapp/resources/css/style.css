@@ -21,3 +21,12 @@ td {
 	background: #FAFAFA;
 	text-align: left;
 }
+
+#page {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 5px 3px #D0D0D0;
+    padding-bottom: 50px;
+    margin-top: 70px;
+}
