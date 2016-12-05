@@ -22,6 +22,7 @@
 				<table class="tg">
 					<tr>
 						<th>Fecha</th>
+						<th>Job Id</th>
 						<th>Impresora</th>
 						<th>Usuario</th>
 						<th>Computador</th>
@@ -33,6 +34,7 @@
 					
 					<tr>
 						<td><%=print.getFormattedCreationTime() %></td>
+						<td><%=print.getJobId() %></td>
 						<td><%=print.getPrinter() %></td>
 						<td><%=print.getUserName() %></td>
 						<td><%=print.getComputer() %></td>
