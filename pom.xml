@@ -165,7 +165,7 @@
 	</repositories>
 	 -->
 	<build>
-		<finalName>ianus-ingest-web</finalName>
+		<finalName>print-management</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
